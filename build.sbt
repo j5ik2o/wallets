@@ -214,7 +214,7 @@ lazy val `api-server` = (project in file("api-server"))
     name := "wallets-api-server",
     libraryDependencies ++= Seq(
       Logback.classic
-    ),
+    ) ++ Akka.managementAll,
     fork in run := true,
     javaAgents += "org.aspectj" % "aspectjweaver" % "1.8.13",
     javaOptions in Universal += "-Dorg.aspectj.tracing.factory=default",
